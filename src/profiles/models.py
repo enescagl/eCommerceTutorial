@@ -8,7 +8,7 @@ class profile(models.Model):
     description = models.TextField(default='description default text')
 
     def __str__(self):
-        return
+        return str(self.name)
 
     def __unicode__(self):
         return self.name
