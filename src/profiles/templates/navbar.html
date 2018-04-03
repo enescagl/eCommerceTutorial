@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-md navbar-light navbar-outline-dark bg-light static-top justify-content-between">
+
+    <a class="navbar-brand ml-5" href="{% url 'home' %}">Shop Online</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsMenu" aria-controls="navbarsMenu"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse align-left" id="navbarsMenu">
+        {% url 'about' as about %}
+        {% url 'contact' as contact %}
+        <ul class="navbar-nav container">
+            <li class="nav-item">
+                <a {% if request.path == about %} style="text-decoration: underline;" {% endif %} class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="#">Recommendations</a>
+            </li>
+            <li class="nav-item ">
+                <a {% if request.path == contact %} style="text-decoration: underline;" {% endif %} class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav container ml-auto">
+            <form class="form-inline ml-auto my-lg-0">
+                <input class="form-control mr-sm-2 " type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-secondary btn-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <li class="nav-item dropdown mr-5">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="#">Shopping Cart</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
