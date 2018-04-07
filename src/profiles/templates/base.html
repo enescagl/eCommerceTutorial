@@ -18,15 +18,15 @@
 </head>
 
 <body>
-    
+
     {% include 'navbar.html' %}
     <main role="main " class="container">
-        {% block headBlock %}
+        {% block headBlock %} 
         {% endblock %}
-       
-        {% block jumbotronBlock %}
+        {% block content %}
         {% endblock %}
-
+        {% block jumbotronBlock %} 
+        {% endblock %} 
         {% block contactForm %}
         {% endblock %}
 
