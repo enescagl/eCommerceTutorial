@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 
@@ -10,7 +11,15 @@ def home(request):
 
 
 def about(request):
-    title = 'Home Page'
+    title = 'About Page'
     context = {'title': title}
     template = 'about.html'
+    return render(request, template, context)
+
+
+@login_required
+def userProfile(request):
+    user = request.user
+    context = {'user': user}
+    template = 'profile.html'
     return render(request, template, context)
